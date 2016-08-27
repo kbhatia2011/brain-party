@@ -1,0 +1,19 @@
+<div id="container">
+  <nav>
+    {{#link-to "index"}}
+      Home
+    {{/link-to}}
+    {{#link-to "about"}}
+      About
+    {{/link-to}}
+    {{#link-to "events"}}
+      Events
+    {{/link-to}}
+    {{#link-to "contact-us"}}
+      Contact
+    {{/link-to}}
+  </nav>
+  <div id="content" class="container-fluid">
+    {{outlet}}
+  </div>
+</div>
