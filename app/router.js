@@ -12,7 +12,10 @@ Router.map(function() {
     this.route('the-idea');
   });
   this.route('events');
-  this.route('contact-us');
+  this.route('contact-us', function() {
+    this.route('present');
+    this.route('feedback');
+  });
 });
 
 export default Router;

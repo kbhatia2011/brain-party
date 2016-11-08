@@ -1,0 +1,113 @@
+<div class="row present">
+  <div class="col-xs-3 to-present">
+    <img src="/assets/images/present.png" alt="argh">
+    <h3>Be a Presenter!</h3>
+      {{#link-to 'contact-us' tagName='button' classNames='btn btn-default'}}
+      <h4><span class="glyphicon glyphicon-chevron-left"></span> Back</h4>
+      {{/link-to}}
+  </div>
+  <div class="col-xs-3 form-fields">
+    <div class="row sign-up">
+      <h3>SIGN UP</h3>
+    </div>
+    <div class="row name">
+      <div class="col-xs-3 emptybox">
+      </div>
+      <div class="col-xs-9 bluebox">
+        <h4>Name:</h4>
+      </div>
+    </div>
+    <div class="row email">
+      <div class="col-xs-3 emptybox">
+      </div>
+      <div class="col-xs-9 bluebox">
+        <h4>E-mail:</h4>
+      </div>
+    </div>
+    <div class="row date">
+      <div class="col-xs-3 emptybox">
+      </div>
+      <div class="col-xs-9 bluebox">
+        <h4>Preferred Date <br>for Presentation:</h4>
+      </div>
+    </div>
+    <div class="row title">
+      <div class="col-xs-3 emptybox">
+      </div>
+      <div class="col-xs-9 bluebox">
+        <h4>Title/Topic:</h4>
+      </div>
+    </div>
+    <div class="row comments">
+      <div class="col-xs-3 emptybox">
+      </div>
+      <div class="col-xs-9 bluebox">
+        <h4>Comments:</h4>
+      </div>
+    </div>
+
+
+  </div>
+  <iframe name="hidden-iframe" id="hidden-iframe" style="display: none;"> Thank you for your response!</iframe>
+
+  <form class="col-xs-6 form-fill" id="input-form" action="https://docs.google.com/forms/d/e/1FAIpQLSexe615O2PtSnqgFfC8WNTjrXVT8J2SXnkByDomiAdGSqrehg/formResponse" method="POST" target="hidden-iframe">
+    <div class="row shpeel">
+      <p>Thank you for offering to bring the Brain Booze for our next party!</p>
+      <p1>We are so excited to see what we can learn from you!</p1>
+    </div>
+
+    <div class="row name form-group has-warning has-feedback">
+        {{input class='form-control'
+          id='input-name'
+          placeholder='Professor Pangloss'
+          name='entry.1759586553'
+          value=model.name}}
+          {{#if (v-get model 'name' 'isInvalid')}}
+          {{#if (v-get model 'name' 'isDirty')}}
+            <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+            {{/if}}
+          {{/if}}
+    </div>
+
+    <!-- <p></p> -->
+
+    <div class="row email form-group has-warning has-feedback">
+      {{input class="form-control" id="input-email" type="email" placeholder="optimus_prime@dolorosa.com" name="entry.234305518" value=model.email}}
+      {{#if (v-get model 'email' 'isInvalid')}}
+      {{#if (v-get model 'email' 'isDirty')}}
+        <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+        {{/if}}
+      {{/if}}
+    </div>
+    <div class="row date form-group has-warning has-feedback">
+      {{input class="form-control" id="input-date" placeholder = "Any day is the best day. (August 2nd or 3rd works best.)" name="entry.122462794" value=model.date}}
+      {{#if (v-get model 'date' 'isInvalid')}}
+      {{#if (v-get model 'date' 'isDirty')}}
+        <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+        {{/if}}
+      {{/if}}
+
+    </div>
+    <div class="row title form-group has-warning has-feedback">
+      {{input class="form-control" id="input-title" placeholder="Monadology - a metaphysics of simple substances." name="entry.881038926" value=model.title}}
+      {{#if (v-get model 'title' 'isInvalid')}}
+      {{#if (v-get model 'title' 'isDirty')}}
+        <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+        {{/if}}
+      {{/if}}
+    </div>
+
+    <div class="row comments">
+      <div class="col-xs-8 optimism">
+        {{textarea placeholder="Don't worry be happy" rows="5" cols="30" class="form-control" id="input-comments" name="entry.775077118" value=model.comments}}
+      </div>
+      <div class="col-xs-4 sadness">
+        <button type="submit" disabled={{v-get model 'isInvalid'}} class="btn btn-primary"><p>SUBMIT</p></button>
+      </div>
+      <input type="hidden" name="fvv" value="1">
+      <input type="hidden" name="draftResponse" value="[,,&quot;-7855781311318272096&quot;]">
+      <input type="hidden" name="pageHistory" value="0">
+      <input type="hidden" name="fbzx" value="-7855781311318272096">
+    </div>
+  </form>
+</div>

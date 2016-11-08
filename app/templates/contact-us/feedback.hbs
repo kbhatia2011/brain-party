@@ -1,0 +1,89 @@
+<div class="row present">
+  <div class="col-xs-3 to-present">
+    <img src="/assets/images/feedback.png" class="feedback" alt="argh">
+    <h3>We want to know <br>what you think!</h3>
+      {{#link-to 'contact-us' tagName='button' classNames='btn btn-default'}}
+      <h4><span class="glyphicon glyphicon-chevron-left"></span> Back</h4>
+      {{/link-to}}
+  </div>
+  <div class="col-xs-3 form-fields">
+    <div class="row sign-up">
+      <h3>THOUGHTS?</h3>
+    </div>
+    <div class="row name">
+      <div class="col-xs-3 emptybox">
+      </div>
+      <div class="col-xs-9 bluebox">
+        <h4>Name:</h4>
+      </div>
+    </div>
+    <div class="row email">
+      <div class="col-xs-3 emptybox">
+      </div>
+      <div class="col-xs-9 bluebox">
+        <h4>E-mail:</h4>
+      </div>
+    </div>
+
+    <div class="row comments">
+      <div class="col-xs-3 emptybox">
+      </div>
+      <div class="col-xs-9 bluebox">
+        <h4>Comments:</h4>
+      </div>
+    </div>
+
+
+  </div>
+  <iframe name="hidden-iframe" id="hidden-iframe" style="display: none;"></iframe>
+
+  <form class="col-xs-6 form-fill" id="input-form" action="https://docs.google.com/forms/d/e/1FAIpQLSexe615O2PtSnqgFfC8WNTjrXVT8J2SXnkByDomiAdGSqrehg/formResponse" method="POST" target="hidden-iframe">
+    <div class="row shpeel">
+      <p>Brain Party is in constant need of improvement and ideas. We love input from</p>
+      <p1>all kinds of brains so that we can be as great as possible!</p1>
+    </div>
+
+    <div class="row name form-group has-warning has-feedback">
+        {{input class='form-control'
+          id='input-name'
+          placeholder='Professor Pangloss'
+          name='entry.1759586553'
+          value=model.name}}
+          {{#if (v-get model 'name' 'isInvalid')}}
+          {{#if (v-get model 'name' 'isDirty')}}
+            <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+            {{/if}}
+          {{/if}}
+    </div>
+
+    <!-- <p></p> -->
+
+    <div class="row email form-group has-warning has-feedback">
+      {{input class="form-control" id="input-email" type="email" placeholder="optimus_prime@dolorosa.com" name="entry.234305518" value=model.email}}
+      {{#if (v-get model 'email' 'isInvalid')}}
+      {{#if (v-get model 'email' 'isDirty')}}
+        <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+        {{/if}}
+      {{/if}}
+    </div>
+
+
+    <div class="row comments feedback form-group has-warning has-feedback">
+      <div class="col-xs-9 optimism feedback">
+        {{textarea placeholder="Don't worry be happy" rows="15" cols="30" class="form-control" id="input-feedback" name="entry.775077118" value=model.comments}}
+        {{#if (v-get model 'comments' 'isInvalid')}}
+        {{#if (v-get model 'comments' 'isDirty')}}
+          <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+          {{/if}}
+        {{/if}}
+      </div>
+      <div class="col-xs-3 sadness feedback">
+        <button type="submit" disabled={{v-get model 'isInvalid'}} class="btn btn-primary"><p>SUBMIT</p></button>
+      </div>
+      <input type="hidden" name="fvv" value="1">
+      <input type="hidden" name="draftResponse" value="[,,&quot;-7855781311318272096&quot;]">
+      <input type="hidden" name="pageHistory" value="0">
+      <input type="hidden" name="fbzx" value="-7855781311318272096">
+    </div>
+  </form>
+</div>
